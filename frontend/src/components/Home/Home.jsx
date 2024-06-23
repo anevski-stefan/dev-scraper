@@ -16,7 +16,7 @@ function Home() {
     useEffect(() => {
         const checkBackendStatus = async () => {
             try {
-                await axios.get('http://localhost:5000/api/status');
+                await axios.get('https://dev-scraper-jyqy.onrender.com/api/status');
                 setIsBackendAvailable(true);
             } catch (error) {
                 console.error('Backend is not available:', error);
@@ -49,7 +49,7 @@ function Home() {
 
     const fetchArticles = async () => {
         try {
-            let url = 'http://localhost:5000/api/articles';
+            let url = 'https://dev-scraper-jyqy.onrender.com/api/articles';
             if (query) {
                 url += `?query=${encodeURIComponent(query)}`;
             }
