@@ -11,7 +11,7 @@ def get_articles():
     try:
         query = request.args.get('query', '')
 
-        command = ['python', 'scraper.py']
+        command = ['python', '../scraper/scraper.py']
         if query:
             command.append(query)
 
