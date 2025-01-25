@@ -1,16 +1,15 @@
 # Dev.to Article Scraper
 
-A full-stack web application that scrapes articles from dev.to based on user queries. The application features a React frontend and Flask backend with Playwright for web scraping.
+A full-stack web application that scrapes and displays articles from dev.to based on user queries. Built with React + Vite for the frontend and Flask for the backend.
 
 ## Features
 
-- Search dev.to articles by query
-- Real-time article scraping
-- Responsive card-based UI
-- Local storage for persisting search results
+- Search dev.to articles by keyword
+- Display article cards with titles, tags, and links
+- Real-time scraping status updates
+- Persistent storage of last search query and results
+- Responsive design with Tailwind CSS
 - Toast notifications for user feedback
-- Backend health check monitoring
-- Tag-based article filtering
 
 ## Tech Stack
 
@@ -18,29 +17,22 @@ A full-stack web application that scrapes articles from dev.to based on user que
 - React 18
 - Vite
 - Tailwind CSS
-- Axios
-- React Toastify
+- Axios for API calls
+- React Toastify for notifications
 
 ### Backend
 - Flask
-- Flask-CORS
-- Playwright
-- Python 3.x
+- Playwright for web scraping
+- Flask-CORS for cross-origin support
+- Gunicorn for production deployment
 
 ## Prerequisites
 
-Before running the application, ensure you have the following installed:
 - Node.js (v16 or higher)
-- Python 3.x
-- pip (Python package manager)
+- Python 3.8+
+- pip
 
 ## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/anevski-stefan/dev-scraper.git
-cd dev-to-scraper
-```
 
 ### Backend Setup
 
@@ -52,7 +44,7 @@ cd backend
 2. Create a virtual environment (optional but recommended):
 ```bash
 python -m venv venv
-source venv/bin/activate  
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. Install dependencies:
@@ -81,8 +73,8 @@ npm install
 
 ### Start the Backend Server
 
-1. From the backend directory:
 ```bash
+cd backend
 python app.py
 ```
 
@@ -90,8 +82,8 @@ The backend server will start on `http://localhost:5000`
 
 ### Start the Frontend Development Server
 
-1. From the frontend directory:
 ```bash
+cd frontend
 npm run dev
 ```
 
@@ -105,30 +97,9 @@ The frontend development server will start on `http://localhost:5173`
 4. View the results displayed as cards with titles, tags, and links
 5. Click "Read More" on any card to visit the original article
 
-## Project Structure
+## Error Handling
 
-```
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Home/
-│   │   │   └── Card/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
-│   └── vite.config.js
-│
-└── backend/
-    ├── app.py
-    ├── scraper.py
-    └── requirements.txt
-```
-
-## Features in Detail
-
-- **Real-time Scraping**: Uses Playwright for dynamic web scraping
-- **Error Handling**: Comprehensive error handling with user feedback
-- **Responsive Design**: Mobile-friendly interface using Tailwind CSS
-- **Data Persistence**: Stores search results in localStorage
-- **Backend Health Monitoring**: Checks backend availability before operations
-
+- The application checks for backend availability on startup
+- Toast notifications inform users of success/failure states
+- Error messages are displayed for failed API calls
+- Loading states are shown during data fetching
