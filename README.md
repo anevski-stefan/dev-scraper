@@ -103,3 +103,7 @@ The frontend development server will start on `http://localhost:5173`
 - Toast notifications inform users of success/failure states
 - Error messages are displayed for failed API calls
 - Loading states are shown during data fetching
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
